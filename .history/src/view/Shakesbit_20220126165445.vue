@@ -23,7 +23,7 @@
                 <span class="span">{{ss3}}</span>
         </div>
         <div class="new4">
-          <div class="new5" style="margin-top: 80px;">
+          <div class="new5">
             <video class="video1" style="height: 420px;" controls autoplay="autoplay" loop muted>
               <source src="@/assets/vi.mp4" type="video/mp4">
             </video>
@@ -94,7 +94,7 @@
                 <span class="span">{{ss3}}</span>
         </div>
         <div class="new4">
-          <div class="new5" style="width:60%;height:320px;margin-top:40px;">
+          <div class="new5" style="width:60%;height:320px;">
             <video style="margin-top:0px;height: 190px;" class="video1" controls autoplay="autoplay" loop muted>
               <source src="@/assets/vi.mp4" type="video/mp4">
             </video>
@@ -278,7 +278,7 @@ export default {
       }
       // 荷兰式拍卖
       if(msec3>0){
-        // this.ti=false
+        this.ti=false
         if(day3==0){
           // 
           // 时间小于一天 开始倒计时 a阶段开始

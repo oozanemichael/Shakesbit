@@ -278,7 +278,7 @@ export default {
       }
       // 荷兰式拍卖
       if(msec3>0){
-        // this.ti=false
+        this.ti=false
         if(day3==0){
           // 
           // 时间小于一天 开始倒计时 a阶段开始
