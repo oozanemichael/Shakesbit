@@ -24,7 +24,7 @@
         </div>
         <div class="new4">
           <div class="new5">
-            <video class="video1" style="height: 420px;" controls autoplay="autoplay" loop muted>
+            <video class="video1" controls autoplay="autoplay" loop muted>
               <source src="@/assets/vi.mp4" type="video/mp4">
             </video>
             <div class="new55">
@@ -94,7 +94,7 @@
         </div>
         <div class="new4">
           <div class="new5" style="width:60%;height:320px;">
-            <video style="margin-top:0px;height: 190px;" class="video1" controls autoplay="autoplay" loop muted>
+            <video style="margin-top:40px;" class="video1" controls autoplay="autoplay" loop muted>
               <source src="@/assets/vi.mp4" type="video/mp4">
             </video>
             <div class="new55" style="padding: 0 14px;">
@@ -391,7 +391,7 @@ export default {
 }
 .new5 video{
   width:100%;
-  /* margin-top:80px; */
+  margin-top:80px;
 }
 .new55{
   font-size: 18px;
@@ -570,12 +570,14 @@ export default {
 }
 .twLeft video{
   width:100%;
+  height: 300px;
   background: #000;
 }
 .video1{
   width: 100%;
-  border-radius: 8px 8px 0px 0px;
-  background: #000;
+  /* border-radius: 8px 8px 0px 0px;
+  height: 200px;
+  background: #000; */
 }
 .twRight{
   width:50%;

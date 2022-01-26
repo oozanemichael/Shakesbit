@@ -24,9 +24,7 @@
         </div>
         <div class="new4">
           <div class="new5">
-            <video class="video1" style="height: 420px;" controls autoplay="autoplay" loop muted>
-              <source src="@/assets/vi.mp4" type="video/mp4">
-            </video>
+            <img src="@/assets/images/ditu.png" alt="">
             <div class="new55">
               <div class="new6">價格</div>
               <div class="new7">0.39ETH</div>
@@ -94,9 +92,7 @@
         </div>
         <div class="new4">
           <div class="new5" style="width:60%;height:320px;">
-            <video style="margin-top:0px;height: 190px;" class="video1" controls autoplay="autoplay" loop muted>
-              <source src="@/assets/vi.mp4" type="video/mp4">
-            </video>
+            <img style="margin-top:40px;" src="@/assets/images/ditu.png" alt="">
             <div class="new55" style="padding: 0 14px;">
               <div class="new6" style="font-size: 14px;margin-top: 15px;">價格</div>
               <div class="new7" style="font-size: 14px;margin-top: 15px;">0.39ETH</div>
@@ -389,9 +385,9 @@ export default {
   border-radius: 21px;
 
 }
-.new5 video{
+.new5 img{
   width:100%;
-  /* margin-top:80px; */
+  margin-top:80px;
 }
 .new55{
   font-size: 18px;
@@ -570,11 +566,13 @@ export default {
 }
 .twLeft video{
   width:100%;
+  height: 300px;
   background: #000;
 }
 .video1{
   width: 100%;
   border-radius: 8px 8px 0px 0px;
+  height: 200px;
   background: #000;
 }
 .twRight{

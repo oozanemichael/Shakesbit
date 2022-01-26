@@ -24,7 +24,7 @@
         </div>
         <div class="new4">
           <div class="new5">
-            <video class="video1" style="height: 420px;" controls autoplay="autoplay" loop muted>
+            <video class="video1" controls autoplay="autoplay" loop muted>
               <source src="@/assets/vi.mp4" type="video/mp4">
             </video>
             <div class="new55">
