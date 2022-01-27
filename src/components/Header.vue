@@ -249,10 +249,12 @@ export default {
       this.isConnect2=false
     },
     goConnectBack(){
+      this.disconnect();
       this.isConnect1=false
       this.isConnect=false
     },
     goConnectBack2(){
+      this.disconnect();
       this.isConnect2=false
       this.isConnect=false
     },
@@ -264,6 +266,7 @@ export default {
           //没安装MetaMask钱包进行弹框提示
           alert("请安装MetaMask")
         } else {
+          var that=this
           //如果用户安装了MetaMask，你可以要求他们授权应用登录并获取其账号
           window.ethereum.enable()
             .then(function (accounts) {
@@ -272,19 +275,18 @@ export default {
                 console.log('当前网络不在以太坊')
               }
               //如果用户同意了登录请求，你就可以拿到用户的账号
-              console.log('用户钱包地址', accounts[0])
-              this.ConnectTxt.n1=accounts[0]
-              //钱包余额
-              web3.eth.getBalance(accounts[0]).then(console.log);
+              console.log('用户钱包地址', accounts[0]);
+              that.ConnectTxt.n2=accounts[0].toString();
+              that.ConnectTxt.n3=accounts[0].toString();
             })
-            .catch(function (reason) {
-              // 如果用户拒绝了登录请求
-              if (reason === "User rejected provider access") {
-                console.log('用户拒绝了登录请求')
-              } else {
-                console.log("其他情况");
-              }
-            });
+            // .catch(function (reason) {
+            //   // 如果用户拒绝了登录请求
+            //   if (reason === "User rejected provider access") {
+            //     console.log('用户拒绝了登录请求')
+            //   } else {
+            //     console.log("其他情况");
+            //   }
+            // });
         }
       }
       // 当前选中高亮
@@ -292,11 +294,9 @@ export default {
     },
     //断开钱包方法
     async disconnect(){
-      window.ethereum.on('disconnect',
-        function(){
-          console.log("disconnect");
-        }
-      );
+      ethereum.on('disconnect', function (){
+        console.log("disconnect");
+      });
     },
 
   }
