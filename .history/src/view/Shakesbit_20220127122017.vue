@@ -3,7 +3,7 @@
     <div id="bigData" class="container-fuild hidden-xs" 
     >
       <div class="row bigData-container">
-        <div class="new1"  style="margin-top:90px">知識 · 工具 · 收益</div>
+        <div class="new1"  style="mmargin-top:90px">知識 · 工具 · 收益</div>
         <div class="new2">你駕馭加密貨幣的起點 <br/>—Shakesbit</div>
         <div class="new3" v-if="ti">
             白名單開售倒數：
