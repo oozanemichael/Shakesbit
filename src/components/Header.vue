@@ -212,15 +212,15 @@ export default {
     },
     // 拷贝
     cop(d){
-      let input = document.createElement('input') 
+      let input = document.createElement('input')
       //给input的内容复制
-      input.value = d   
+      input.value = d
       // 在body里面插入这个元素
-      document.body.appendChild(input)   
+      document.body.appendChild(input)
       // 选中input里面内容
-      input.select()  
+      input.select()
       //执行document里面的复制方法
-      document.execCommand("Copy") 
+      document.execCommand("Copy")
       // 复制之后移除这个元素
       document.body.removeChild(input)
       // this.$message({
@@ -264,67 +264,35 @@ export default {
     chan(d){
       console.log(d);
       if (d===0){
-        if (window.ethereum) {
-          this.switch();
-          this.enable();
-        }else{
-          console.log("请安装MetaMask钱包");
-          //链接跳转到 https://metamask.io
+        //判断用户是否安装MetaMask钱包插件
+        if (typeof window.ethereum === "undefined") {
+          //没安装MetaMask钱包进行弹框提示
+          alert("请安装MetaMask")
+        } else {
+          //如果用户安装了MetaMask，你可以要求他们授权应用登录并获取其账号
+          window.ethereum.enable()
+            .then(function (accounts) {
+              // 判断是否连接以太
+              if (window.ethereum.networkVersion !== "1") {
+                console.log('当前网络不在以太坊')
+              }
+              //如果用户同意了登录请求，你就可以拿到用户的账号
+              console.log('用户钱包地址', accounts[0])
+              //钱包余额
+              web3.eth.getBalance(accounts[0]).then(console.log);
+            })
+            .catch(function (reason) {
+              // 如果用户拒绝了登录请求
+              if (reason === "User rejected provider access") {
+                console.log('用户拒绝了登录请求')
+              } else {
+                console.log("其他情况");
+              }
+            });
         }
       }
       // 当前选中高亮
       this.mm=d
-    },
-    async enable(){
-      window.ethereum.enable().then((res) => {
-        //alert("当前钱包地址："+res[0])
-        console.log("当前钱包地址："+res[0]);
-        console.log(res);
-        console.log(Web3.version);
-        //设置web3对象
-        //var balance = this.Web3.eth.getBalance(account);
-        //console.log("balance: "+ balance)
-      })
-    },
-    async switch(){
-      console.log(ethereum)
-      let id = ethereum.chainId;
-      console.log(id)
-      let hecoMainnet = {
-        chainId:'0x38',rpcUrls:['https://bsc-dataseed.binance.org/'],chainName:'Binance Smart Chain',nativeCurrency:{
-          name: 'ETH',
-          symbol: 'ETH', // 2-6 characters long
-          decimals: 8,
-        }
-      };
-      this.switchChain(hecoMainnet);
-    },
-    async addChain(data){
-      try {
-        await ethereum.request({
-          method: 'wallet_addEthereumChain',
-          params: [data],
-        });
-      } catch (addError) {
-        console.log(addError)
-        // handle "add" error
-      }
-    },
-    async switchChain(data){
-      try {
-        let {chainId} = data;
-        await ethereum.request({
-          method: 'wallet_switchEthereumChain',
-          params: [{ chainId }],
-        });
-      } catch (switchError) {
-        // This error code indicates that the chain has not been added to MetaMask.
-        console.log(switchError)
-        if (switchError.code === 4902) {
-          this.addChain(data);
-        }
-        // handle other "switch" errors
-      }
     },
     async disconnect(){
       window.ethereum.on('disconnect',
@@ -686,7 +654,7 @@ export default {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  
+
   margin-left: 60px;
 }
 .ConnectWallet1{
