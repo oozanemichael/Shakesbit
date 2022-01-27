@@ -9,7 +9,7 @@
       <div v-if="!isConnect" class="ConnectWallet" @click="goW">Connect Wallet</div>
       <div v-if="isConnect" class="ConnectWallet22" @click="goConnect">
         <!-- <div class="ConnectWallet23"></div> -->
-        {{ConnectTxt.n2|capitalize}}
+        {{ConnectTxt.n2}}
       </div>
 
     </div>
@@ -20,7 +20,7 @@
         <div  v-if="!isConnect" class="ConnectWallet1"  @click="goW4()" style="height: 27px;line-height: 27px;font-size: 12px;margin-top: 6px;">Connect Wallet</div>
         <div v-if="isConnect" class="ConnectWallet22" style="width:157px;font-size: 12px;height: 27px;line-height: 27px;margin-top: 16px;margin-right: 20px;" @click="goConnect1">
           <!-- <div class="ConnectWallet23" style="width:86px;font-size: 12px;height: 27px;line-height: 27px;"></div> -->
-            {{ConnectTxt.n2|capitalize}}
+            {{ConnectTxt.n2}}
           </div>
         <div
           class="header-nav-m-menu-wrapper"
@@ -191,12 +191,6 @@ export default {
     }
     else{
         this.isConnect=false
-    }
-  },
-  filters: {
-    capitalize: function(value) {
-      value = value.substring(0,7)+'...';
-      return value; // 首字母大写
     }
   },
   methods: {
