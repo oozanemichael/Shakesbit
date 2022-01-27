@@ -696,9 +696,5 @@ export default {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
 }
 </style>
