@@ -236,7 +236,7 @@ export default {
     handleClose3(){
       this.ddcd=false
       // 拟定链接成功，显示新的按钮
-      // this.isConnect=true
+      this.isConnect=true
     },
     handleClose4(){
       this.ddcd4=false

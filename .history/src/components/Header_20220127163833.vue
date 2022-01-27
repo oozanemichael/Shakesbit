@@ -8,7 +8,7 @@
       </div>
       <div v-if="!isConnect" class="ConnectWallet" @click="goW">Connect Wallet</div>
       <div v-if="isConnect" class="ConnectWallet22" @click="goConnect">
-        <!-- <div class="ConnectWallet23"></div> -->
+        <div class="ConnectWallet23">{{ConnectTxt.n1}}</div>
         {{ConnectTxt.n2}}
       </div>
 
@@ -19,7 +19,7 @@
         <img class="center-block" src="@/assets/images/logo_icon.png" alt="logo">
         <div  v-if="!isConnect" class="ConnectWallet1"  @click="goW4()" style="height: 27px;line-height: 27px;font-size: 12px;margin-top: 6px;">Connect Wallet</div>
         <div v-if="isConnect" class="ConnectWallet22" style="width:157px;font-size: 12px;height: 27px;line-height: 27px;margin-top: 16px;margin-right: 20px;" @click="goConnect1">
-          <!-- <div class="ConnectWallet23" style="width:86px;font-size: 12px;height: 27px;line-height: 27px;"></div> -->
+          <div class="ConnectWallet23" style="width:86px;font-size: 12px;height: 27px;line-height: 27px;">{{ConnectTxt.n1}}</div>
             {{ConnectTxt.n2}}
           </div>
         <div
@@ -185,8 +185,8 @@ export default {
   },
     mounted() {
     console.log(sessionStorage.getItem("mymoney"))
-    if(sessionStorage.getItem("mymoney")!=null&&sessionStorage.getItem("mymoney")!=''){
-      console.log('----')
+    if(sessionStorage.getItem("mymoney")!=null&&sessionStorage.getItem("mymoney")==null!=''){
+      console.log('1')
         this.isConnect=true
     }
     else{
@@ -236,12 +236,12 @@ export default {
     handleClose3(){
       this.ddcd=false
       // 拟定链接成功，显示新的按钮
-      // this.isConnect=true
+      this.isConnect=true
     },
     handleClose4(){
       this.ddcd4=false
       // 拟定链接成功，显示新的按钮
-      // this.isConnect=true
+      this.isConnect=true
     },
     handleCloseST(){
       this.ovST=false
@@ -307,7 +307,6 @@ export default {
     //断开钱包方法
     async disconnect(){
       this.isConnect=false
-      sessionStorage.setItem('mymoney','');
       ethereum.on('disconnect', function (){
         console.log("disconnect");
         
