@@ -116,7 +116,7 @@
               <div class="new9" style="width:50%;margin-left:25%;margin-top:20px;font-size: 16px;height:44px;line-height:44px;background: rgb(152, 152, 152);cursor: not-allowed">BUY ON OPENSEA</div>
           </div>
         </div>
-        <div class="new10" style="margin-top:20px;padding:65px 15px 0;background: #08040c !important;">
+        <div class="new10" style="padding:65px 15px 0;background: #08040c !important;">
           <div style="width: 10px;height: 26px;background: #FFE153;border-radius: 2px;float:left"></div>
           <div class="new11" style="font-size: 26px;">＊會員權益</div>
           <div class="new12" style="font-size: 18px;line-height: 30px;padding-left: 12px;">
