@@ -102,7 +102,7 @@
               <div class="wallet2" style="margin-top:15px;position: relative;">{{ConnectTxt.n3}}
                 <img @click="cop(ConnectTxt.n3)" class="wallet3" src="@/assets/images/fuzhi_icon.png" alt="">
               </div>
-              <div class="wallet4">View on Etherscan
+              <div class="wallet4">View on BscScan
                 <img  class="wallet3r" src="@/assets/images/wailian_icon.png" alt="">
               </div>
               <div class="wallet5" @click="goConnectBack">Disconnect Wallet</div>
@@ -127,7 +127,7 @@
               <div class="wallet2" style="margin-top:10px;position: relative;font-size:18px;height: 51px;">{{ConnectTxt.n3}}
                 <img @click="cop(ConnectTxt.n3)" class="wallet3" src="@/assets/images/fuzhi_icon.png" alt="">
               </div>
-              <div class="wallet4" style="margin-top:20px;">View on Etherscan
+              <div class="wallet4" style="margin-top:20px;">View on BscScan
                 <img  class="wallet3r" src="@/assets/images/wailian_icon.png" alt="">
               </div>
               <div class="wallet5" @click="goConnectBack2" style="margin-top:30px;font-size: 14px;">Disconnect Wallet</div>
@@ -152,7 +152,7 @@ export default {
       isConnect1:false,
       isConnect2:false,
       ConnectTxt:{
-        n1:'0.05845 ETH',
+        n1:'0.05845 BNB',
         n2:'0x…7961',
         n3:'oehjg9ejgoejgerhg8ehjg9…'
       },
@@ -292,8 +292,8 @@ export default {
       console.log(id)
       let hecoMainnet = {
         chainId:'0x38',rpcUrls:['https://bsc-dataseed.binance.org/'],chainName:'Binance Smart Chain',nativeCurrency:{
-          name: 'ETH',
-          symbol: 'ETH', // 2-6 characters long
+          name: 'BNB',
+          symbol: 'BNB', // 2-6 characters long
           decimals: 8,
         }
       };

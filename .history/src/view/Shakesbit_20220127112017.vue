@@ -193,7 +193,7 @@ export default {
         typ:"m",
         text:'',
         msg:'',
-        yanzheng:true,
+        yanzheng:false,
         typ2:false,
     };
   },
@@ -216,9 +216,9 @@ export default {
   methods: {
      countdown() {
       // const end = Date.parse(new Date('2022-01-27 20:00:00'))
-      const end = Date.parse(new Date('2022-02-04 20:00:00'))   
-      const end2 = Date.parse(new Date('2022-02-05 21:00:00'))
-      const end3 = Date.parse(new Date('2022-05-05 20:00:00'))
+      const end = Date.parse(new Date('2022-02-03 20:00:00'))   
+      const end2 = Date.parse(new Date('2022-02-04 21:00:00'))
+      const end3 = Date.parse(new Date('2022-05-04 20:00:00'))
       const now = Date.parse(new Date())
       const msec = end - now
       let day = parseInt(msec / 1000 / 60 / 60 / 24)

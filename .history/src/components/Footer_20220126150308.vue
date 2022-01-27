@@ -1,8 +1,8 @@
 <template>
   <div id="footer" class="container-fluid">
     <div class="logo">
-      <a href="https://line.me/ti/g2/v62kZIGBGaTmHCjfCaW3wg?utm_campaign=default&utm_medium=link_copy&utm_source=invitation"><img src="@/assets/images/line_icon.png" alt="logo图"></a>
-      <a href="https://discord.gg/edEsheRn"><img src="@/assets/images/discord_icon.png" alt="logo图"></a>
+      <a ><img src="@/assets/images/line_icon.png" alt="logo图"></a>
+      <a ><img src="@/assets/images/discord_icon.png" alt="logo图"></a>
     </div>
     <p class="copy">Copyright © TowerDao</p>
   </div>

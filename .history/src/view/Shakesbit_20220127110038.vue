@@ -1,7 +1,6 @@
 <template>
   <div id="HomePage" class="animated" style="margin-top: -89px;">
-    <div id="bigData" class="container-fuild hidden-xs" style="background: url('../assets/images/banner_img.png');background-size:100% 1400px;background-repeat:no-repeat;"
-    >
+    <div id="bigData" class="container-fuild hidden-xs">
       <div class="row bigData-container" style="margin-top:89px">
         <div class="new1">知識 · 工具 · 收益</div>
         <div class="new2">你駕馭加密貨幣的起點 <br/>—Shakesbit</div>
@@ -42,7 +41,7 @@
               <div v-if="typ=='b'" class="new9" @click="openY">Mint</div><!-- b阶段按钮 -->
               <div v-else-if="typ=='c'" class="new9" @click="openY">Mint</div><!-- c阶段按钮 -->
               <div v-else class="new9" style="background: rgb(152, 152, 152);">Mint</div>
-              <div class="new9" style="margin-left:138px;background: rgb(152, 152, 152);cursor: not-allowed">BUY ON OPENSEA</div>
+              <div class="new9" style="margin-left:138px">BUY ON OPENSEA</div>
           </div>
         </div>
         <div class="new10">
@@ -72,10 +71,10 @@
     </div>
 
 
-    <div id="bigData4" class="container-fuild visible-xs" style="margin-top: -89px;">
+    <div id="bigData4" class="container-fuild visible-xs">
       <div class="row bigData-container">
-        <div class="new1" style="font-size: 30px;font-weight:400;margin-top: 100px;">知識 · 工具 · 收益</div>
-        <div class="new2" style="font-size: 24px;letter-spacing: 4px; line-height: 35px;margin-top:0">你駕馭加密貨幣的起點 <br/>—Shakesbit</div>
+        <div class="new1" style="font-size: 30px;font-weight:400;margin-top: 20px;">知識 · 工具 · 收益</div>
+        <div class="new2" style="font-size: 24px;letter-spacing: 4px; line-height: 35px;margin-top:0">你駕馭加密貨幣的起點 <br/>—Shakesbi</div>
         <div class="new3" style="font-size:16px;letter-spacing: 3px;line-height:16px; margin-top: 28px;-webkit-text-stroke:0px #FFE153" v-if="ti">
             白名單開售倒數：
                 <span class="span">{{hh}}</span>:
@@ -113,7 +112,7 @@
               <div @click="openY" v-if="typ=='b'" class="new9" style="width:50%;margin-left:25%;margin-top:25px;font-size: 16px;height:44px;line-height:44px">Mint</div><!-- b阶段按钮 -->
               <div @click="openY" v-else-if="typ=='c'" class="new9" style="width:50%;margin-left:25%;margin-top:25px;font-size: 16px;;height:44px;line-height:44px">Mint</div><!-- c阶段按钮 -->
               <div v-else class="new9" style="background: rgb(152, 152, 152);width:50%;margin-left:25%;margin-top:25px;font-size: 16px;;height:44px;line-height:44px">Mint</div>
-              <div class="new9" style="width:50%;margin-left:25%;margin-top:20px;font-size: 16px;height:44px;line-height:44px;background: rgb(152, 152, 152);cursor: not-allowed">BUY ON OPENSEA</div>
+              <div class="new9" style="width:50%;margin-left:25%;margin-top:20px;font-size: 16px;height:44px;line-height:44px">BUY ON OPENSEA</div>
           </div>
         </div>
         <div class="new10" style="margin-top:65px;padding:0 15px;">
@@ -193,7 +192,7 @@ export default {
         typ:"m",
         text:'',
         msg:'',
-        yanzheng:true,
+        yanzheng:false,
         typ2:false,
     };
   },
@@ -216,9 +215,9 @@ export default {
   methods: {
      countdown() {
       // const end = Date.parse(new Date('2022-01-27 20:00:00'))
-      const end = Date.parse(new Date('2022-02-04 20:00:00'))   
-      const end2 = Date.parse(new Date('2022-02-05 21:00:00'))
-      const end3 = Date.parse(new Date('2022-05-05 20:00:00'))
+      const end = Date.parse(new Date('2022-02-03 20:00:00'))   
+      const end2 = Date.parse(new Date('2022-02-04 21:00:00'))
+      const end3 = Date.parse(new Date('2022-05-04 20:00:00'))
       const now = Date.parse(new Date())
       const msec = end - now
       let day = parseInt(msec / 1000 / 60 / 60 / 24)
@@ -463,7 +462,7 @@ export default {
 #HomePage {
   width: 100%;
   
-  
+  background: url('../assets/images/banner_img.png');
 }
 
 /* 轮播图 */
@@ -621,8 +620,7 @@ export default {
   transition: all ease 0.6s;
   box-sizing: border-box;
   background: url('../assets/images/banner_img.png');
-  background-size:100% 780px;
-background-repeat:no-repeat;
+  background-size: 100%;
 }
 .cenkuai{
   width:100%;
@@ -731,8 +729,8 @@ background-repeat:no-repeat;
   width:100%;
   float: left;
   padding: 10px;
-  /* background: url('../assets/images/banner_img.png');
-  background-size: 100% 100%; */
+  background: url('../assets/images/banner_img.png');
+  background-size: 100% 100%;
 }
 .TwoMapKang{
   width: calc(50% - 12px);

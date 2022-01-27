@@ -46,12 +46,12 @@ export default {
   margin-top: -115px !important;
 }
 body{
-  background: #08040c  !important;
+  background: #171717  !important;
 }
 html,body{
       width: 100%;
     overflow-x: hidden;
-    background:#08040c  !important;
+    background: #171717  !important;
 }
 .swiper-pagination-bullet-active{
       background: #F3E76E  !important;
