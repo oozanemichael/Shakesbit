@@ -153,9 +153,15 @@
 
           <div style="width:100%;padding-left:30px;padding-right:30px;">
             <div style="padding-bottom:40px;float: left;">
-              <div style="display:inline-block;width:85%">
-                  <verify @success="onVerifySuccess" @error="onVerifyError" type="2"></verify>
-              </div>
+              <slide-verify :l="42"
+                :r="10"
+                :w="160"
+                :h="105"
+                @success="onSuccess"
+                @fail="onFail"
+                @refresh="onRefresh"
+                :slider-text="text"
+                ></slide-verify>
             </div>
           </div>
         </el-dialog>
@@ -168,7 +174,6 @@ import Swiper from "swiper";
 import { WOW } from 'wowjs';
 import mychart from '@/components/chart'
 import { setTimeout } from 'timers';
-import Verify from 'vue2-verify'
 export default {
   name: "HomePage",
   data() {
@@ -188,7 +193,7 @@ export default {
         typ:"m",
         text:'',
         msg:'',
-        yanzheng:true,
+        yanzheng:false,
         typ2:false,
     };
   },
@@ -209,24 +214,12 @@ export default {
     }, 1000)
   },
   methods: {
-      onVerifySuccess(obj) {
-          //验证码正确回调
-          alert('verify success');
-          //todo
-      },
-      onVerifyError(obj) {
-          //验证码错误回调
-          alert('verify error');
-          //错误刷新验证码
-          obj.refresh();
-          //todo
-      },
      countdown() {
       // const end = Date.parse(new Date('2022-01-27 20:00:00'))
-      const end = Date.parse(new Date('2022/02/04 20:00:00'))   
-      const end2 = Date.parse(new Date('2022/02/05 21:00:00'))
-      const end3 = Date.parse(new Date('2022/05/05 20:00:00'))
-      const now = Date.parse(new Date())
+      const end = Date.parse(new Date(s_time.replace(/-/g,'2022-01-27 20:00:00')))   
+      const end2 = Date.parse(new Date(s_time.replace(/-/g,'2022-01-27 21:00:00'))) 
+      const end3 = Date.parse(new Date(s_time.replace(/-/g,'2022-05-04 20:00:00'))) 
+      const now = new Date(s_time.replace(/-/g, '/'));
       const msec = end - now
       let day = parseInt(msec / 1000 / 60 / 60 / 24)
       let hr = parseInt(msec / 1000 / 60 / 60 % 24)
@@ -320,8 +313,7 @@ export default {
     }
   },
   components:{
-      mychart,
-      Verify,
+      mychart
   }
 };
 </script>

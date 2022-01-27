@@ -153,7 +153,7 @@
 
           <div style="width:100%;padding-left:30px;padding-right:30px;">
             <div style="padding-bottom:40px;float: left;">
-              <div style="display:inline-block;width:85%">
+              <div style="display:inline-block;width:90%">
                   <verify @success="onVerifySuccess" @error="onVerifyError" type="2"></verify>
               </div>
             </div>
