@@ -193,7 +193,7 @@ export default {
         typ:"m",
         text:'',
         msg:'',
-        yanzheng:false,
+        yanzheng:true,
         typ2:false,
     };
   },

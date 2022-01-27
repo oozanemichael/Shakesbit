@@ -153,15 +153,14 @@
 
           <div style="width:100%;padding-left:30px;padding-right:30px;">
             <div style="padding-bottom:40px;float: left;">
-              <slide-verify :l="42"
-                :r="10"
-                :w="160"
-                :h="105"
-                @success="onSuccess"
-                @fail="onFail"
-                @refresh="onRefresh"
-                :slider-text="text"
-                ></slide-verify>
+              <el-form-item prop="code">
+                <el-input v-model="loginForm.code" auto-complete="off" placeholder="验证码" style="width: 63%">
+                  <svg-icon slot="prefix" icon-class="validCode" class="el-input__icon input-icon" />
+                </el-input>
+                <div class="login-code">
+                  <img :src="codeUrl" @click="getCode">
+                </div>
+              </el-form-item>
             </div>
           </div>
         </el-dialog>
@@ -193,8 +192,11 @@ export default {
         typ:"m",
         text:'',
         msg:'',
-        yanzheng:false,
-        typ2:false,
+        yanzheng:true,
+        typ2:true,
+        loginForm: {
+          code: '',
+        },
     };
   },
   mounted() {
@@ -214,6 +216,7 @@ export default {
     }, 1000)
   },
   methods: {
+      // 验证码逻辑
      countdown() {
       // const end = Date.parse(new Date('2022-01-27 20:00:00'))
       const end = Date.parse(new Date('2022-02-04 20:00:00'))   
