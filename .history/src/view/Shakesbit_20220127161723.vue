@@ -213,11 +213,7 @@ export default {
   methods: {
       onVerifySuccess(obj) {
           //验证码正确回调
-          // 验证白名单操作
-        isWhite({"address":sessionStorage.getItem("mymoney")}).then(res => {
-          // 返回验证结果集
-          console.log(res)
-        })
+          alert('verify success');
           //todo
       },
       onVerifyError(obj) {
@@ -310,13 +306,20 @@ export default {
     },
     openY(ty){
       this.yanzheng=true
+      if(ty=='b'){
+        // 验证白名单操作
+        isWhite({"address":sessionStorage.getItem("mymoney")}).then(res => {
+          // 返回验证结果集
+          console.log(res)
+        })
+      }
     },
     handleCloseyanzheng(){
       this.yanzheng=false
     },
     onSuccess(){
       this.msg = 'login success'
-      
+      alert("验证成功")
     },
     onFail(){
       this.msg = ''

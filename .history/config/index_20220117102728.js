@@ -11,8 +11,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable:{
-      '/info': {
-        target: 'http://103.123.133.226:8070',
+      '/higher': {
+        target: 'http://ht.higherdao.com/',
         secure: true, // 如果是 https ,需要开启这个选项
         changeOrigin: true, // 是否是跨域请求?肯定是啊,不跨域就没有必要配置这个proxyTable了.
       },

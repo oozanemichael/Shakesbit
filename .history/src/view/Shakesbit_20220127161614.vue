@@ -41,7 +41,7 @@
           <div class="new8">
               <div v-if="typ=='b'" class="new9" @click="openY('b')">Mint</div><!-- b阶段按钮 -->
               <div v-else-if="typ=='c'" class="new9" @click="openY('c')">Mint</div><!-- c阶段按钮 -->
-              <div v-else class="new9" style="background: rgb(152, 152, 152);" @click="openY('b')">Mint</div>
+              <div v-else class="new9" style="background: rgb(152, 152, 152);">Mint</div>
               <div class="new9" style="margin-left:138px;background: rgb(152, 152, 152);cursor: not-allowed">BUY ON OPENSEA</div>
           </div>
         </div>
@@ -213,11 +213,7 @@ export default {
   methods: {
       onVerifySuccess(obj) {
           //验证码正确回调
-          // 验证白名单操作
-        isWhite({"address":sessionStorage.getItem("mymoney")}).then(res => {
-          // 返回验证结果集
-          console.log(res)
-        })
+          alert('verify success');
           //todo
       },
       onVerifyError(obj) {
@@ -310,13 +306,20 @@ export default {
     },
     openY(ty){
       this.yanzheng=true
+      if(ty=='b'){
+        // 验证白名单操作
+        isWhite({"address":sessionStorage.getItem("mymoney")}).then(res => {
+          // 返回验证结果集
+          console.log(res)
+        })
+      }
     },
     handleCloseyanzheng(){
       this.yanzheng=false
     },
     onSuccess(){
       this.msg = 'login success'
-      
+      alert("验证成功")
     },
     onFail(){
       this.msg = ''

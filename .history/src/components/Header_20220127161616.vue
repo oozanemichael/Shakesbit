@@ -277,8 +277,6 @@ export default {
               //如果用户同意了登录请求，你就可以拿到用户的账号
               console.log('用户钱包地址', accounts[0]);
               that.ConnectTxt.n2=accounts[0].toString();
-              // 存入缓存
-              sessionStorage.setItem('mymoney',accounts[0]);
               that.ConnectTxt.n3=accounts[0].toString();
             })
             // .catch(function (reason) {
@@ -296,10 +294,8 @@ export default {
     },
     //断开钱包方法
     async disconnect(){
-      this.isConnect=false
       ethereum.on('disconnect', function (){
         console.log("disconnect");
-        
       });
     },
 

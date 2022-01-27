@@ -296,10 +296,8 @@ export default {
     },
     //断开钱包方法
     async disconnect(){
-      this.isConnect=false
       ethereum.on('disconnect', function (){
         console.log("disconnect");
-        
       });
     },
 
