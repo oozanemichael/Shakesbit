@@ -42,7 +42,7 @@
 
           <div style="width:100%;padding-left:30px;padding-right:30px;">
             <div class="tan111">Select a Wallet</div>
-            <div style="padding-bottom:40px;float: left;width:100%">
+            <div style="padding-bottom:40px;float: left;">
               <div :class="{acc:mm==index}" class="tan112" :key="index" v-for="(item,index) in aaa" @click="chan(index)">
                 <div class="tan222"><span></span></div>
                 <div class="tan1121">{{item.name}}</div>
@@ -62,7 +62,7 @@
 
           <div style="width:100%;padding-left:10px;padding-right:10px;">
             <div class="tan111">Select a Wallet</div>
-            <div style="padding-bottom:40px;float: left;width:100%;">
+            <div style="padding-bottom:40px;float: left;">
               <div :class="{acc:mm==index}" class="tan112" :key="index" v-for="(item,index) in aaa" @click="chan(index)">
                 <div class="tan222" ><span></span></div>
                 <div class="tan1121">{{item.name}}</div>
