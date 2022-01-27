@@ -74,8 +74,8 @@
 
     <div id="bigData4" class="container-fuild visible-xs" style="margin-top: -89px;">
       <div class="row bigData-container">
-        <div class="new1" style="font-size: 30px;font-weight:100;margin-top: 100px;-webkit-text-stroke: 1px #FFFFFF;">知識 · 工具 · 收益</div>
-        <div class="new2" style="font-size: 24px;letter-spacing: 4px; line-height: 35px;margin-top:0;">你駕馭加密貨幣的起點 <br/>—Shakesbit</div>
+        <div class="new1" style="font-size: 30px;font-weight:100;margin-top: 100px;">知識 · 工具 · 收益</div>
+        <div class="new2" style="font-size: 24px;letter-spacing: 4px; line-height: 35px;margin-top:0">你駕馭加密貨幣的起點 <br/>—Shakesbit</div>
         <div class="new3" style="font-size:16px;letter-spacing: 3px;line-height:16px; margin-top: 28px;-webkit-text-stroke:0px #FFE153" v-if="ti">
             白名單開售倒數：
                 <span class="span">{{hh}}</span>:
