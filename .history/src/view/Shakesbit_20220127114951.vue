@@ -2,7 +2,7 @@
   <div id="HomePage" class="animated" style="margin-top: -89px;">
     <div id="bigData" class="container-fuild hidden-xs" 
     >
-      <div class="row bigData-container">
+      <div class="row bigData-container" style="background: url('../assets/images/banner_img.png');background-size:100% 1400px;background-repeat:no-repeat;margin-top:89px">
         <div class="new1">知識 · 工具 · 收益</div>
         <div class="new2">你駕馭加密貨幣的起點 <br/>—Shakesbit</div>
         <div class="new3" v-if="ti">
@@ -605,7 +605,7 @@ export default {
   width: 1170px;
   margin: 0 auto;
   transition: all ease 0.6s;
-  background: url('../assets/images/banner_img.png');background-size:100% 1400px;background-repeat:no-repeat;margin-top:89px
+  box-sizing: border-box;
 }
 #bigData3 {
   padding:0 100px 50px;
