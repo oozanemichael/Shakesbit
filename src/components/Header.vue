@@ -294,6 +294,7 @@ export default {
       // 当前选中高亮
       this.mm=d
     },
+    //断开钱包方法
     async disconnect(){
       window.ethereum.on('disconnect',
         function(){
