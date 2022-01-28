@@ -284,6 +284,7 @@ export default {
         } else {
           var that=this
           //如果用户安装了MetaMask，你可以要求他们授权应用登录并获取其账号
+          that.provider = window.ethereum;
           window.ethereum.enable()
             .then(function (accounts) {
               // 判断是否连接以太
@@ -300,6 +301,8 @@ export default {
               that.ddcd=false
               that.ddcd4=false
               that.ConnectTxt.n3=accounts[0].toString();
+
+              that.web3 = new Web3(that.provider);
             })
             // .catch(function (reason) {
             //   // 如果用户拒绝了登录请求

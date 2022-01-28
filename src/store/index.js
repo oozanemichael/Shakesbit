@@ -9,5 +9,8 @@ const state = {
 
 
 export default new Vuex.Store({
-    state
+  strict: true,
+  state,
+  mutations: {},
+  actions: {}
 })

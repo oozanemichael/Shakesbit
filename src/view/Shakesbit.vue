@@ -221,6 +221,7 @@ export default {
             type: 'error',
             message: '请先链接钱包'
           });
+          this.yanzheng=false;
           return;
         }
         this.$axios.get('info/isWhite?address='+sessionStorage.getItem("mymoney")).then(resp => {

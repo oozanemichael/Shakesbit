@@ -5,7 +5,9 @@ import App from './App'
 
 /* 路由 */
 import router from './router'
-
+/* Web3 */
+import Web3 from 'web3'
+Vue.prototype.Web3 = Web3
 
 /* axios */
 // import * as axios from './api'
