@@ -1,6 +1,6 @@
 <template>
   <div id="HomePage" class="animated" style="margin-top: -89px;">
-    <div id="bigData" class="container-fuild hidden-xs" 
+    <div id="bigData" class="container-fuild hidden-xs"
     >
       <div class="row bigData-container">
         <div class="new1"  style="margin-top:90px">知識 · 工具 · 收益</div>
@@ -65,7 +65,7 @@
             </div>
             <div class="mask1">Coming Soon</div>
           </div>
-          
+
         </div>
 
       </div>
@@ -136,9 +136,9 @@
             </div>
             <div class="mask1" style="width:70%;font-size: 22px;height: 42px;line-height:42px">Coming Soon</div>
           </div>
-          
+
         </div>
-        
+
       </div>
 
       <!-- 弹出 -->
@@ -159,7 +159,7 @@
             </div>
           </div>
         </el-dialog>
-        
+
     </div>
   </div>
 </template>
@@ -176,14 +176,14 @@ export default {
   data() {
     return {
         day: 0,
-        hh: "24", 
-        mm: "00", 
+        hh: "24",
+        mm: "00",
         ss: "00",
-        hh2: "24", 
-        mm2: "00", 
+        hh2: "24",
+        mm2: "00",
         ss2: "00",
-        hh3: "24", 
-        mm3: "00", 
+        hh3: "24",
+        mm3: "00",
         ss3: "00",
         ti:false,
         ti2:false,
@@ -211,34 +211,63 @@ export default {
     }, 1000)
   },
   methods: {
+      isEmpty(obj){
+        return typeof obj == "undefined" || obj == null || obj === "";
+      },
       onVerifySuccess(obj) {
-          //验证码正确回调
-          // 验证白名单操作
-        isWhite({"address":sessionStorage.getItem("mymoney")}).then(res => {
-          // 返回验证结果集
-          console.log(res)
+        var address=sessionStorage.getItem("mymoney");
+        if (this.isEmpty(address)){
+          this.$message({
+            type: 'error',
+            message: '请先链接钱包'
+          });
+          return;
+        }
+        this.$axios.get('info/isWhite?address='+sessionStorage.getItem("mymoney")).then(resp => {
+          if (resp) {
+            var bool=Boolean(resp.data);
+            if (bool){
+              console.log("yes")
+            }else {
+              this.$message({
+                type: 'error',
+                message: '您暂无购买资格'
+              });
+            }
+          }else {
+            this.$message({
+              type: 'error',
+              message: '您暂无购买资格'
+            });
+          }
         })
-          //todo
+        window.parent.location.reload();
       },
       onVerifyError(obj) {
           //验证码错误回调
-          alert('verify error');
-          //错误刷新验证码
-          obj.refresh();
-          //todo
+        this.$message({
+          type: 'error',
+          message: '验证失败'
+        });
+        //错误刷新验证码
+        obj.refresh();
+        //todo
       },
      countdown() {
       // const end = Date.parse(new Date('2022-01-27 20:00:00'))
-      const end = Date.parse(new Date('2022/02/04 20:00:00'))   
-      const end2 = Date.parse(new Date('2022/02/05 21:00:00'))
-      const end3 = Date.parse(new Date('2022/05/05 20:00:00'))
+       const end = Date.parse(new Date('2022/01/26 20:00:00'))
+       const end2 = Date.parse(new Date('2022/01/27 21:00:00'))
+       const end3 = Date.parse(new Date('2022/01/28 20:00:00'))
+      // const end = Date.parse(new Date('2022/02/04 20:00:00'))
+      // const end2 = Date.parse(new Date('2022/02/05 21:00:00'))
+      // const end3 = Date.parse(new Date('2022/05/05 20:00:00'))
       const now = Date.parse(new Date())
       const msec = end - now
       let day = parseInt(msec / 1000 / 60 / 60 / 24)
       let hr = parseInt(msec / 1000 / 60 / 60 % 24)
       let min = parseInt(msec / 1000 / 60 % 60)
       let sec = parseInt(msec / 1000 % 60)
-      
+
       const msec2 = end2 - now
       let day2 = parseInt(msec2 / 1000 / 60 / 60 / 24)
       let hr2 = parseInt(msec2 / 1000 / 60 / 60 % 24)
@@ -272,7 +301,7 @@ export default {
           this.typ='m'
         }
       }
-      
+
       if(msec2>0){
         // 阶段b
         if(day2==0&&hr2==0){
@@ -294,7 +323,7 @@ export default {
       if(msec3>0){
         // this.ti=false
         if(day3==0){
-          // 
+          //
           // 时间小于一天 开始倒计时 a阶段开始
           this.hh3 = hr3 > 9 ? hr3 : '0' + hr3
           this.mm3 = min3 > 9 ? min3 : '0' + min3
@@ -306,7 +335,7 @@ export default {
         // 事件过期
         this.typ2=false
       }
-      
+
     },
     openY(ty){
       this.yanzheng=true
@@ -316,7 +345,7 @@ export default {
     },
     onSuccess(){
       this.msg = 'login success'
-      
+
     },
     onFail(){
       this.msg = ''
@@ -476,9 +505,9 @@ export default {
 /* 整体盒子 */
 #HomePage {
   width: 100%;
-  
+
   background: url('../assets/images/banner_img.png');background-size:100% 1400px;background-repeat:no-repeat;margin-top:89px
-  
+
 }
 
 /* 轮播图 */

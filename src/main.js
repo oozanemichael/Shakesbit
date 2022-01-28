@@ -8,10 +8,14 @@ import router from './router'
 
 
 /* axios */
-import * as axios from './api'
-import api from './api/api'
-Vue.prototype.http = axios;
-Vue.prototype.api = api;
+// import * as axios from './api'
+// import api from './api/api'
+var axios = require('axios')
+axios.defaults.baseURL = 'http://127.0.0.1:8070'
+// 全局注册，之后可在其他组件中通过 this.$axios 发送数据npm
+Vue.prototype.$axios = axios
+//Vue.prototype.http = axios;
+//Vue.prototype.api = api;
 
 /* swiper */
 import 'swiper/dist/css/swiper.min.css';
