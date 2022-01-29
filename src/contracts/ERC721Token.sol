@@ -2,7 +2,7 @@
  *Submitted for verification at BscScan.com on 2021-04-11
 */
 
-// File: @openzeppelin/constant/utils/Context.sol
+// File: @openzeppelin/contracts/utils/Context.sol
 // SPDX-License-Identifier: MIT
 
 
@@ -16,7 +16,7 @@ pragma solidity >=0.6.0 <0.8.0;
  * paying for execution may not be the actual sender (as far as an application
  * is concerned).
  *
- * This contract is only required for intermediate, library-like constant.
+ * This contract is only required for intermediate, library-like contracts.
  */
 abstract contract Context {
   function _msgSender() internal view virtual returns (address payable) {
@@ -29,7 +29,7 @@ abstract contract Context {
   }
 }
 
-// File: @openzeppelin/constant/introspection/IERC165.sol
+// File: @openzeppelin/contracts/introspection/IERC165.sol
 
 
 
@@ -56,7 +56,7 @@ interface IERC165 {
   function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-// File: @openzeppelin/constant/token/ERC721/IERC721.sol
+// File: @openzeppelin/contracts/token/ERC721/IERC721.sol
 
 
 
@@ -187,7 +187,7 @@ interface IERC721 is IERC165 {
   function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external;
 }
 
-// File: @openzeppelin/constant/token/ERC721/IERC721Metadata.sol
+// File: @openzeppelin/contracts/token/ERC721/IERC721Metadata.sol
 
 
 
@@ -216,7 +216,7 @@ interface IERC721Metadata is IERC721 {
   function tokenURI(uint256 tokenId) external view returns (string memory);
 }
 
-// File: @openzeppelin/constant/token/ERC721/IERC721Enumerable.sol
+// File: @openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol
 
 
 
@@ -247,7 +247,7 @@ interface IERC721Enumerable is IERC721 {
   function tokenByIndex(uint256 index) external view returns (uint256);
 }
 
-// File: @openzeppelin/constant/token/ERC721/IERC721Receiver.sol
+// File: @openzeppelin/contracts/token/ERC721/IERC721Receiver.sol
 
 
 
@@ -256,7 +256,7 @@ pragma solidity >=0.6.0 <0.8.0;
 /**
  * @title ERC721 token receiver interface
  * @dev Interface for any contract that wants to support safeTransfers
- * from ERC721 asset constant.
+ * from ERC721 asset contracts.
  */
 interface IERC721Receiver {
   /**
@@ -271,7 +271,7 @@ interface IERC721Receiver {
   function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata data) external returns (bytes4);
 }
 
-// File: @openzeppelin/constant/introspection/ERC165.sol
+// File: @openzeppelin/contracts/introspection/ERC165.sol
 
 
 
@@ -296,7 +296,7 @@ abstract contract ERC165 is IERC165 {
   mapping(bytes4 => bool) private _supportedInterfaces;
 
   constructor () internal {
-    // Derived constant need only register support for their own interfaces,
+    // Derived contracts need only register support for their own interfaces,
     // we register support for ERC165 itself here
     _registerInterface(_INTERFACE_ID_ERC165);
   }
@@ -327,7 +327,7 @@ abstract contract ERC165 is IERC165 {
   }
 }
 
-// File: @openzeppelin/constant/math/SafeMath.sol
+// File: @openzeppelin/contracts/math/SafeMath.sol
 
 
 
@@ -544,7 +544,7 @@ library SafeMath {
   }
 }
 
-// File: @openzeppelin/constant/utils/Address.sol
+// File: @openzeppelin/contracts/utils/Address.sol
 
 
 
@@ -572,7 +572,7 @@ library Address {
    * ====
    */
   function isContract(address account) internal view returns (bool) {
-    // This method relies on extcodesize, which returns 0 for constant in
+    // This method relies on extcodesize, which returns 0 for contracts in
     // construction, since the code is only stored at the end of the
     // constructor execution.
 
@@ -587,7 +587,7 @@ library Address {
    * `recipient`, forwarding all available gas and reverting on errors.
    *
    * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost
-   * of certain opcodes, possibly making constant go over the 2300 gas limit
+   * of certain opcodes, possibly making contracts go over the 2300 gas limit
    * imposed by `transfer`, making them unable to receive funds via
    * `transfer`. {sendValue} removes this limitation.
    *
@@ -736,7 +736,7 @@ library Address {
   }
 }
 
-// File: @openzeppelin/constant/utils/EnumerableSet.sol
+// File: @openzeppelin/contracts/utils/EnumerableSet.sol
 
 
 
@@ -1036,7 +1036,7 @@ library EnumerableSet {
   }
 }
 
-// File: @openzeppelin/constant/utils/EnumerableMap.sol
+// File: @openzeppelin/contracts/utils/EnumerableMap.sol
 
 
 
@@ -1305,7 +1305,7 @@ library EnumerableMap {
   }
 }
 
-// File: @openzeppelin/constant/utils/Strings.sol
+// File: @openzeppelin/contracts/utils/Strings.sol
 
 
 
@@ -1342,7 +1342,7 @@ library Strings {
   }
 }
 
-// File: @openzeppelin/constant/token/ERC721/ERC721.sol
+// File: @openzeppelin/contracts/token/ERC721/ERC721.sol
 
 
 
@@ -1812,12 +1812,12 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
    * - `from` cannot be the zero address.
    * - `to` cannot be the zero address.
    *
-   * To learn more about hooks, head to xref:ROOT:extending-constant.adoc#using-hooks[Using Hooks].
+   * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
    */
   function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual { }
 }
 
-// File: @openzeppelin/constant/access/Ownable.sol
+// File: @openzeppelin/contracts/access/Ownable.sol
 
 
 
@@ -1887,7 +1887,7 @@ abstract contract Ownable is Context {
   }
 }
 
-// File: constant/NFT.sol
+// File: contracts/NFT.sol
 
 
 pragma solidity >=0.6.0 <0.8.0;
@@ -1913,7 +1913,11 @@ contract NFT is ERC721, Ownable {
     _contractOwner = msg.sender;
   }
 
-  function mint(string memory _tokenURI, address _toAddress, uint _price) public returns (uint) {
+  function setTokenURI(uint _tokenId,string memory _tokenURI) public onlyOwner {
+    _setTokenURI(_tokenId, _tokenURI);
+  }
+
+  function mint(string memory _tokenURI, address _toAddress, uint _price) public onlyOwner returns (uint) {
     uint _tokenId = totalSupply() + 1;
     price[_tokenId] = _price;
     listedMap[_tokenId] = true;
